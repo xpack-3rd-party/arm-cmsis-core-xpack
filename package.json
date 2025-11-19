@@ -5,7 +5,7 @@
   "main": "",
   "scripts": {
     "npm-install": "npm install",
-    "pack": "npm pack",
+    "npm-pack": "npm pack",
     "postversion": "git push origin --all && git push origin --tags",
     "git-log": "git log --pretty='%cd * %h %s' --date=short"
   },
