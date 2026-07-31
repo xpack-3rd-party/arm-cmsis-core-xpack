@@ -1,0 +1,44 @@
+{
+  "minimumXpmakeRequired": "0.0.0",
+  "license": "MIT",
+  "copyright": "Copyright (c) 2022-2026 Liviu Ionescu",
+  "description": "Top CMSIS components",
+  "cdlComponents": [
+    {
+      "id": "xpack-3rd-party.arm-cmsis-core",
+      "cdlComponents": [
+        {
+          "id": "cortex-m",
+          "display": "Cortex-M",
+          "description": "Arm CMSIS Core Cortex-M headers",
+          "publicIncludeFolders": [
+            "CMSIS/Core/Include"
+          ],
+          "sourceFiles": [],
+          "publicDefines": [
+            // Workaround to avoid
+            // https://github.com/ARM-software/CMSIS_5/issues/1397
+            // cmsis_gcc.h:133:15: error: nested extern declaration of '_start' [-Werror=nested-externs]
+            "__PROGRAM_START"
+          ],
+          "dependencies": [],
+          // "customDefine": "XPACK_3RD_PARTY_ARM_CMSIS_CORE_CORTEX_M_ENABLED"
+        },
+        {
+          "id": "cortex-a",
+          "display": "Cortex-A",
+          "description": "Arm CMSIS Core Cortex-A headers",
+          "publicIncludeFolders": [
+            "CMSIS/Core_A/Include"
+          ],
+          "sourceFiles": [],
+          "publicDefines": [
+            "__PROGRAM_START"
+          ],
+          "dependencies": [],
+          // "customDefine": "XPACK_3RD_PARTY_ARM_CMSIS_CORE_CORTEX_A_ENABLED"
+        }
+      ]
+    }
+  ]
+}
