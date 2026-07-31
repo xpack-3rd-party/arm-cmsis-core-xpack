@@ -1,4 +1,6 @@
 # -----------------------------------------------------------------------------
+# DO NOT EDIT! Automatically generated from template file:
+# xcdl-package.jsonc
 #
 # This file is part of the µOS++ project (https://micro-os-plus.github.io/).
 # Copyright (c) 2022-2026 Liviu Ionescu. All rights reserved.
@@ -11,66 +13,151 @@
 #
 # -----------------------------------------------------------------------------
 
-# This file is intended to be consumed by applications with:
+# This file is intended to be used by applications via:
 #
 # `subdir('xpacks/@xpack-3rd-party/arm-cmsis-core')`
 #
-# The result is a dependency that can be referred as:
+# This creates dependencies that can be linked to a target with:
 #
-# `dependencies: [xpack_3rd_party_arm_cmsis_core_m_dependency],`
-#
-# Similarly for Cortex-A:
-#
-# `dependencies: [xpack_3rd_party_arm_cmsis_core_a_dependency],`
+# `dependencies: [xpack_3rd_party_arm_cmsis_core_cortex_m_dependency],`
+# `dependencies: [xpack_3rd_party_arm_cmsis_core_cortex_a_dependency],`
+# `dependencies: [xpack_3rd_party_arm_cmsis_core_dependency],`
 
-# Note: the meson configuration is provided only as a proof of concept,
+# Note: the Meson configuration is provided only as a proof of concept;
 # for production it might need some refinements.
 
 # -----------------------------------------------------------------------------
 
-message('Processing xPack @xpack-3rd-party/arm-cmsis-core-...')
-
-# https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
-xpack_3rd_party_arm_cmsis_core_m_dependency = declare_dependency(
-  include_directories: include_directories(
-    'CMSIS/Core/Include',
-  ),
-  sources: files(
-    # None.
-  ),
-  compile_args: [
-    # Workaround to avoid -Werror=nested-externs
-    '-D__PROGRAM_START',
-  ],
-  dependencies: [
-    # None.
-  ]
-)
-
-message('+ -I CMSIS/Core/Include')
-message('+ -D __PROGRAM_START')
-message('> xpack_3rd_party_arm_cmsis_core_m_dependency')
+# A source code library with Arm CMSIS Core.
+message('Processing xPack @xpack-3rd-party/arm-cmsis-core...')
 
 # -----------------------------------------------------------------------------
 
-xpack_3rd_party_arm_cmsis_core_a_dependency = declare_dependency(
-  include_directories: include_directories(
-    'CMSIS/Core_A/Include',
-  ),
-  sources: files(
-    # None.
-  ),
-  compile_args: [
-    # Workaround to avoid -Werror=nested-externs
-    '-D__PROGRAM_START',
-  ],
-  dependencies: [
-    # None.
-  ]
+# Meson's DSL does not provide introspection methods on dependency objects
+# to retrieve their properties after creation. The `_local_*` variables
+# therefore serve a dual purpose: populating the dependency object and
+# iterating over its components for the `message()` calls at the end.
+
+_local_compile_args = [] # Common C/C++ args.
+_local_compile_c_args = [] # C only args.
+_local_compile_cpp_args = [] # C++ only args.
+_local_include_directories = []
+_local_sources = []
+_local_compile_definitions = []
+_local_dependencies = []
+_local_link_args = []
+_local_link_with = []
+
+_local_include_directories += [
+  'CMSIS/Core/Include',
+]
+_local_compile_args += [
+  '-D__PROGRAM_START',
+]
+
+# https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
+xpack_3rd_party_arm_cmsis_core_cortex_m_dependency = declare_dependency(
+  include_directories: include_directories(_local_include_directories),
+  compile_args: _local_compile_args,
+  sources: files(_local_sources),
+  dependencies: _local_dependencies,
+  link_args: _local_link_args,
+  link_with: _local_link_with,
 )
 
-message('+ -I CMSIS/Core_A/Include')
-message('+ -D __PROGRAM_START')
-message('> xpack_3rd_party_arm_cmsis_core_a_dependency')
+# Meson dependencies cannot differentiate between C and C++ compile args;
+# they are therefore exposed as separate variables alongside the dependency.
+xpack_3rd_party_arm_cmsis_core_cortex_m_dependency_compile_c_args = _local_compile_c_args
+xpack_3rd_party_arm_cmsis_core_cortex_m_dependency_compile_cpp_args = _local_compile_cpp_args
+
+foreach name : _local_include_directories
+  message('+ -I ' + name)
+endforeach
+foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args
+  message('+ ' + name)
+endforeach
+message('> xpack_3rd_party_arm_cmsis_core_cortex_m_dependency')
+
+# -----------------------------------------------------------------------------
+
+_local_compile_args = [] # Common C/C++ args.
+_local_compile_c_args = [] # C only args.
+_local_compile_cpp_args = [] # C++ only args.
+_local_include_directories = []
+_local_sources = []
+_local_compile_definitions = []
+_local_dependencies = []
+_local_link_args = []
+_local_link_with = []
+
+_local_include_directories += [
+  'CMSIS/Core_A/Include',
+]
+_local_compile_args += [
+  '-D__PROGRAM_START',
+]
+
+# https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
+xpack_3rd_party_arm_cmsis_core_cortex_a_dependency = declare_dependency(
+  include_directories: include_directories(_local_include_directories),
+  compile_args: _local_compile_args,
+  sources: files(_local_sources),
+  dependencies: _local_dependencies,
+  link_args: _local_link_args,
+  link_with: _local_link_with,
+)
+
+# Meson dependencies cannot differentiate between C and C++ compile args;
+# they are therefore exposed as separate variables alongside the dependency.
+xpack_3rd_party_arm_cmsis_core_cortex_a_dependency_compile_c_args = _local_compile_c_args
+xpack_3rd_party_arm_cmsis_core_cortex_a_dependency_compile_cpp_args = _local_compile_cpp_args
+
+foreach name : _local_include_directories
+  message('+ -I ' + name)
+endforeach
+foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args
+  message('+ ' + name)
+endforeach
+message('> xpack_3rd_party_arm_cmsis_core_cortex_a_dependency')
+
+# -----------------------------------------------------------------------------
+
+_local_compile_args = [] # Common C/C++ args.
+_local_compile_c_args = [] # C only args.
+_local_compile_cpp_args = [] # C++ only args.
+_local_include_directories = []
+_local_sources = []
+_local_compile_definitions = []
+_local_dependencies = []
+_local_link_args = []
+_local_link_with = []
+
+_local_dependencies += [
+  xpack_3rd_party_arm_cmsis_core_cortex_m_dependency,
+  xpack_3rd_party_arm_cmsis_core_cortex_a_dependency,
+]
+
+# https://mesonbuild.com/Reference-manual_functions.html#declare_dependency
+xpack_3rd_party_arm_cmsis_core_dependency = declare_dependency(
+  include_directories: include_directories(_local_include_directories),
+  compile_args: _local_compile_args,
+  sources: files(_local_sources),
+  dependencies: _local_dependencies,
+  link_args: _local_link_args,
+  link_with: _local_link_with,
+)
+
+# Meson dependencies cannot differentiate between C and C++ compile args;
+# they are therefore exposed as separate variables alongside the dependency.
+xpack_3rd_party_arm_cmsis_core_dependency_compile_c_args = _local_compile_c_args
+xpack_3rd_party_arm_cmsis_core_dependency_compile_cpp_args = _local_compile_cpp_args
+
+foreach name : _local_include_directories
+  message('+ -I ' + name)
+endforeach
+foreach name : _local_sources + _local_compile_definitions + _local_compile_args + _local_compile_c_args + _local_compile_cpp_args
+  message('+ ' + name)
+endforeach
+message('> xpack_3rd_party_arm_cmsis_core_dependency')
 
 # -----------------------------------------------------------------------------
