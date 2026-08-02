@@ -71,7 +71,7 @@ function run_verbose()
 }
 
 run_verbose "${PYPATH}/bin/cmake-format" --config-file "config/.cmake-format.py" --in-place \
-  $(find . \( \( -type d -name "build" \) -o \( -type d -name "xpacks" \) -o \( -type d -name "node_modules" \) \) -prune -o \
+  $(find . \( \( -type d -name "build" \) -o \( -type d -name "xpacks" \) -o \( -type d -name "node_modules" \)  -o \( -type d -name "CMSIS" \) -o \( -type d -name "Device" \)  \) -prune -o \
   -type f \( -name "CMakeLists.txt" -o -name "*.cmake" \) -print)
 
 echo
