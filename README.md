@@ -6,7 +6,7 @@
 
 # A source code library with Arm CMSIS Core
 
-This project provides the **CMSIS Core** headers as an xPack dependency.
+This project provides the **CMSIS Core** headers as an xpm dependency.
 
 The project is hosted on GitHub as
 [xpack-3rd-party/arm-cmsis-core-xpack](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack).
@@ -21,7 +21,7 @@ For maintainer info, please see the
 
 ## Install
 
-As a source library xPack, the easiest way to add it to a project is via
+As a source library xpm package, the easiest way to add it to a project is via
 **xpm**, but it can also be used as any Git project, for example as a submodule.
 
 ### Prerequisites
@@ -73,14 +73,14 @@ There are three active branches:
 
 - `master`, follows the original Arm `master`
 - `xpack`, with the latest stable version (default)
-- `xpack-develop`, with the current development version
+- `xpack-development`, with the current development version
 
-All development is done in the `xpack-develop` branch, and contributions via
+All development is done in the `xpack-development` branch, and contributions via
 Pull Requests should be directed to this branch. (Only contributions
 related to the xPack integration are accepted, functional contributions
 should be addressed to the upstream project.)
 
-When new releases are published, the `xpack-develop` branch is merged
+When new releases are published, the `xpack-development` branch is merged
 into `xpack`.
 
 ## Developer info
@@ -94,7 +94,7 @@ CMSIS Core files are used.
 In addition to the source files, the
 configuration files required to integrate it into
 CMake and meson projects, via a CMake INTERFACE library, or
-a meson dependency.
+a meson dependency, are provided.
 
 ### Status
 
