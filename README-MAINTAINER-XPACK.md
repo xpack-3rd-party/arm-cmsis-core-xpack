@@ -119,7 +119,7 @@ formatted with clang-format.
 Check the `CMSIS/Core/Include/cmsis_version.h` for the two version digits;
 the value in `ARM.CMSIS.pdsc` may not be up to date.
 
-The new version will look `5.4.0-6`. The third number is 0, since Arm uses
+The new version will look `5.4.0-7`. The third number is 0, since Arm uses
 only two numbers. The fourth number is the xPack release number
 of this version.
 
@@ -129,7 +129,7 @@ Check GitHub issues and pull requests:
 
 - <https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/issues/>
 
-and fix them; assign them to a milestone (like `5.4.0-6`).
+and fix them; assign them to a milestone (like `5.4.0-7`).
 
 ### Check `README.md`
 
@@ -146,8 +146,8 @@ but in the version specific release page.
 
 - open the `CHANGELOG-XPACK.md` file
 - check if all previous fixed issues are in
-- add a new entry like _* v5.4.0-6_
-- commit with a message like _prepare v5.4.0-6_
+- add a new entry like _* v5.4.0-7_
+- commit with a message like _prepare v5.4.0-7_
 
 ### Publish on the npmjs.com server
 
@@ -158,7 +158,7 @@ but in the version specific release page.
   the sources and CMake/meson files;
   possibly adjust `.npmignore`
 - push the `xpack-develop` branch to GitHub
-- `npm version 5.4.0-6`
+- `npm version 5.4.0-7`
 - the `postversion` npm script should also update tags via `git push origin --tags`
 - wait for the CI job to complete
   (<https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/actions/workflows/ci.yml>)
@@ -186,5 +186,5 @@ When the package is considered stable:
 When the release is considered stable, promote it as `latest`:
 
 - `npm dist-tag ls @xpack-3rd-party/arm-cmsis-core`
-- `npm dist-tag add @xpack-3rd-party/arm-cmsis-core@5.4.0-6 latest`
+- `npm dist-tag add @xpack-3rd-party/arm-cmsis-core@5.4.0-7 latest`
 - `npm dist-tag ls @xpack-3rd-party/arm-cmsis-core`

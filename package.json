@@ -1,6 +1,6 @@
 {
   "name": "@xpack-3rd-party/arm-cmsis-core",
-  "version": "5.4.0-6",
+  "version": "5.4.0-7.pre",
   "description": "A source code library with Arm CMSIS Core",
   "keywords": [
     "xpack"
