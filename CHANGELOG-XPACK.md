@@ -6,8 +6,21 @@ Please check
 [GitHub](https://github.com/xpack-3rd-party/arm-cmsis-core-xpack/issues/)
 and close existing issues and pull requests.
 
+## 2026-08-04
+
+* v5.4.0-7
+* 772ce3084 re-generate top commons
+
+## 2026-08-02
+
+* c7d2a94b4 prepare 5.4.0-7
+* 7a8668283 cmake-format.sh update
+* 6f0adbbb6 README update
+* 2b65a4582 .npmignore update
+
 ## 2026-07-31
 
+* a594ec9d3 CHANGELOG-XPACK update
 * 7e08b12e8 xcdl-package.jsonc update
 * b85637b81 re-generate top xcdl
 * f91958e5c re-generate top commons

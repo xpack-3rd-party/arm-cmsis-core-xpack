@@ -33,13 +33,13 @@ git clone \
   ~/Work/xpack-3rd-party/arm-cmsis-core-xpack.git
 ```
 
-For development purposes, clone the development branch (`xpack-develop`):
+For development purposes, clone the development branch (`xpack-development`):
 
 ```sh
 rm -rf ~/Work/xpack-3rd-party/arm-cmsis-core-xpack.git && \
 mkdir -p ~/Work/xpack-3rd-party && \
 git clone \
-  --branch xpack-develop \
+  --branch xpack-development \
   https://github.com/xpack-3rd-party/arm-cmsis-core-xpack.git \
   ~/Work/xpack-3rd-party/arm-cmsis-core-xpack.git
 ```
@@ -111,7 +111,7 @@ formatted with clang-format.
 - define `upstream` as <https://github.com/ARM-software/CMSIS_5.git>
 - switch to `master` branch
 - merge from `upstream/master`
-- switch to `xpack-develop` branch
+- switch to `xpack-development` branch
 - merge next release from `master`
 
 ### Increase the version
@@ -146,18 +146,18 @@ but in the version specific release page.
 
 - open the `CHANGELOG-XPACK.md` file
 - check if all previous fixed issues are in
-- add a new entry like _* v5.4.0-7_
+- add a new entry like _\* v5.4.0-7_
 - commit with a message like _prepare v5.4.0-7_
 
 ### Publish on the npmjs.com server
 
-- select the `xpack-develop` branch
+- select the `xpack-development` branch
 - commit all changes
 - `npm pack` and check the content of the archive, which should list
   only `package.json`, `README.md`, `LICENSE`, `CHANGELOG-XPACK.md`,
   the sources and CMake/meson files;
   possibly adjust `.npmignore`
-- push the `xpack-develop` branch to GitHub
+- push the `xpack-development` branch to GitHub
 - `npm version 5.4.0-7`
 - the `postversion` npm script should also update tags via `git push origin --tags`
 - wait for the CI job to complete
@@ -165,7 +165,7 @@ but in the version specific release page.
 
 ### Publish
 
-- `npm publish --tag next` (use `npm publish --access public` when
+- `npm publish --tag test` (use `npm publish --access public` when
   publishing for the first time)
 
 The version is visible at:
@@ -177,9 +177,9 @@ The version is visible at:
 When the package is considered stable:
 
 - with a Git client (VS Code is fine)
-- merge `xpack-develop` into `xpack`
+- merge `xpack-development` into `xpack`
 - push to GitHub
-- select `xpack-develop`
+- select `xpack-development`
 
 ## Tag the npm package as `latest`
 
